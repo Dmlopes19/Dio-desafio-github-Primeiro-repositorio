@@ -1,0 +1,27 @@
+create database cadastro;
+
+use cadastro;
+
+create table pessoas(id int not null auto_increment, nome varchar(30), sexo enum('M','F'), 
+peso decimal(5,2), altura decimal(3,2), nascimento date, nacionalidade varchar(20) default 'Brasil', primary key (id)) charset = utf8;
+
+insert into pessoas
+(id, nome, sexo, peso, altura, nascimento, nacionalidade)
+values
+(default,'Marcelo','M','72.6','1.78','1987-08-30',default), 
+(default,'Rafael','M','68.5', '1.78','1999-03-04',default),
+(default,'Jurema','F','65','1.60','2000-05-12','Portugual');
+
+describe pessoas;
+
+
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+alter table pessoas
+modify column profissao varchar(20);
+
+alter table pessoas
+change column profissao prof varchar(20);
+
+select * from gafanhotos;
